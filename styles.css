@@ -12,6 +12,7 @@ img.header-img {
 
 .titulo {
   font-family: "Satisfy", cursive;
+  font-size: 32px;
 }
 
 a {
@@ -28,4 +29,35 @@ li {
 .carrito {
   width: 30px;
   height: 30px;
+}
+
+.imagenCarta {
+  width: 286px;
+  height: 180px;
+}
+
+.elementos {
+  color: lightslategray;
+}
+
+.elementos:focus-within,
+.elementos:active,
+.elementos:hover {
+  color: white;
+}
+
+.btn-rosa {
+  background-color: salmon;
+  border-color: black;
+  float: right;
+  border-style: groove;
+  border-radius: 5px;
+}
+
+.btn-beige {
+  background-color: lightyellow;
+  border-color: black;
+  float: right;
+  border-style: groove;
+  border-radius: 5px;
 }
