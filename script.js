@@ -1,8 +1,8 @@
 /**
  * Profe perdone el spanglish D:
  */
-let carrito = [];
-let productos = [];
+var carrito = [];
+var productos = [];
 
 async function getData() {
   let response = await fetch(
