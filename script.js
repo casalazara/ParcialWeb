@@ -16,7 +16,7 @@ getData().then((categories) => {
   categories.forEach((category) => {
     let cate = document.getElementById(category.name.split(" ").join("") + "R");
     category.products.forEach((producto) => {
-      cate.innerHTML += `<div class="col-3 mb-3">
+      cate.innerHTML += `<div class="col-md-3 mb-3">
       <div class="card h-100">
         <img class="card-img-top imagenCarta" src=${producto.image} alt=${producto.name}>
         <div class="card-body">
