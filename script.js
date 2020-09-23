@@ -67,8 +67,10 @@ function orderDetail() {
     let tabla = document.getElementsByClassName("cuerpo")[0];
     let tr = document.createElement("tr");
     let td1 = document.createElement("td");
+    let strong = document.createElement("strong");
     let item = document.createTextNode(++i);
-    td1.appendChild(item);
+    strong.appendChild(item);
+    td1.appendChild(strong);
     tr.appendChild(td1);
 
     let td2 = document.createElement("td");
