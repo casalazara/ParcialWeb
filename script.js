@@ -101,7 +101,6 @@ function showMenu() {
   cate.hidden = false;
   let tc = document.getElementById("tabla-carro");
   tc.hidden = true;
-
   limpiarTabla();
 }
 
