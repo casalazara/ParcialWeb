@@ -109,6 +109,7 @@ function vaciar() {
   limpiarTabla();
   car = document.getElementById("carrazo");
   car.innerHTML = "";
+  document.getElementById("total").innerHTML = `Total $${(0).toFixed(2)}`;
 }
 
 function limpiarTabla() {
