@@ -2,7 +2,6 @@
  * Profe perdone el spanglish D:
  */
 let carrito = [];
-let categorias = [];
 let productos = [];
 
 async function getData() {
@@ -14,18 +13,17 @@ async function getData() {
 }
 
 getData().then((categories) => {
-  categorias = categories;
-  categorias.forEach((category) => {
-    let cate = document.getElementById(category.name.trim() + "Deck");
+  categories.forEach((category) => {
+    let cate = document.getElementById(category.name.split(" ").join("") + "R");
     category.products.forEach((producto) => {
-      cate.innerHTML += `<div class="col lg-3 mb-3">
-      <div class="card producto h-100">
+      cate.innerHTML += `<div class="col-3 mb-3">
+      <div class="card h-100">
         <img class="card-img-top imagenCarta" src=${producto.image} alt=${producto.name}>
-        <div class="card-body ">
+        <div class="card-body">
           <h5 class="card-title">${producto.name}</h5>
           <p class="card-text">${producto.description}</p>
           <p class="card-text"><strong>$${producto.price}</strong></p>
-          <a href="#${category.name}" class="btn btn-dark " onclick="addToCar('${producto.name}');">Add to car</a>
+          <a href="#${category.name}" class="btn btn-dark" onclick="addToCar('${producto.name}');">Add to car</a>
         </div>
       </div>
     </div>`;
@@ -39,6 +37,8 @@ getData().then((categories) => {
 function addToCar(product) {
   let obj = productos.find((producto) => producto.name === product);
   carrito.push(obj);
+  car = document.getElementById("carrazo");
+  car.innerHTML = carrito.length + " items";
 }
 
 function countApar(producto, productos) {
@@ -108,6 +108,8 @@ function showMenu() {
 function vaciar() {
   carrito = [];
   limpiarTabla();
+  car = document.getElementById("carrazo");
+  car.innerHTML = "";
 }
 
 function limpiarTabla() {

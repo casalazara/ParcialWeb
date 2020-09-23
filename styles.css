@@ -26,14 +26,15 @@ li {
 .producto {
   width: 18rem;
 }
+
 .carrito {
   width: 30px;
   height: 30px;
 }
 
 .imagenCarta {
-  width: 286px;
-  height: 180px;
+  width: 100%;
+  height: 200px;
 }
 
 .elementos {
