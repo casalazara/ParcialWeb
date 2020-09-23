@@ -1,8 +1,8 @@
 /**
  * Profe perdone el spanglish D:
  */
-var carrito = [];
-var productos = [];
+let carrito = [];
+let productos = [];
 
 async function getData() {
   let response = await fetch(
@@ -34,6 +34,7 @@ getData().then((categories) => {
   tc.hidden = true;
 });
 
+// eslint-disable-next-line no-unused-vars
 function addToCar(product) {
   let obj = productos.find((producto) => producto.name === product);
   carrito.push(obj);
@@ -51,6 +52,7 @@ function countApar(producto, productos) {
   return c;
 }
 
+// eslint-disable-next-line no-unused-vars
 function orderDetail() {
   let cate = document.getElementById("myTabContent");
   cate.hidden = true;
@@ -65,28 +67,28 @@ function orderDetail() {
     let tabla = document.getElementsByClassName("cuerpo")[0];
     let tr = document.createElement("tr");
     let td1 = document.createElement("td");
-    var item = document.createTextNode(++i);
+    let item = document.createTextNode(++i);
     td1.appendChild(item);
     tr.appendChild(td1);
 
-    var td2 = document.createElement("td");
-    var cuenta = document.createTextNode(count);
+    let td2 = document.createElement("td");
+    let cuenta = document.createTextNode(count);
     td2.appendChild(cuenta);
     tr.appendChild(td2);
 
-    var td3 = document.createElement("td");
-    var nombre = document.createTextNode(producto.name);
+    let td3 = document.createElement("td");
+    let nombre = document.createTextNode(producto.name);
     td3.appendChild(nombre);
     tr.appendChild(td3);
 
-    var td4 = document.createElement("td");
-    var description = document.createTextNode(producto.price);
+    let td4 = document.createElement("td");
+    let description = document.createTextNode(producto.price);
     td4.appendChild(description);
     tr.appendChild(td4);
 
-    var td5 = document.createElement("td");
+    let td5 = document.createElement("td");
     parc = producto.price * count;
-    var amount = document.createTextNode(parc.toFixed(2));
+    let amount = document.createTextNode(parc.toFixed(2));
     total += parc;
     td5.appendChild(amount);
     tr.appendChild(td5);
@@ -96,6 +98,7 @@ function orderDetail() {
   document.getElementById("total").innerHTML = `Total $${total.toFixed(2)}`;
 }
 
+// eslint-disable-next-line no-unused-vars
 function showMenu() {
   let cate = document.getElementById("myTabContent");
   cate.hidden = false;
@@ -104,6 +107,7 @@ function showMenu() {
   limpiarTabla();
 }
 
+// eslint-disable-next-line no-unused-vars
 function vaciar() {
   carrito = [];
   limpiarTabla();
@@ -119,6 +123,7 @@ function limpiarTabla() {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 function generarRecibo() {
   let unicos = Array.from(new Set(carrito));
   let i = 0;
@@ -133,5 +138,6 @@ function generarRecibo() {
     };
     rta.push(obj);
   });
+  // eslint-disable-next-line no-console
   console.log(rta);
 }
