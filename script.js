@@ -16,7 +16,7 @@ async function getData() {
 getData().then((categories) => {
   categorias = categories;
   categorias.forEach((category) => {
-    let cate = document.getElementById(category.name + "Deck");
+    let cate = document.getElementById(category.name.trim() + "Deck");
     category.products.forEach((producto) => {
       cate.innerHTML += `<div class="col lg-3 mb-3">
       <div class="card producto h-100">
